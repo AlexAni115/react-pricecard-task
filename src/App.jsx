@@ -7,57 +7,70 @@ function App() {
       plan:"free",
       dolloar:"$0",
       user:"Single User",
+      isUser:true,
       storage:"50GB Storage",
+      isStorage:true,
       publicprojects:"Unlimited Public Projects",
+      isPublicProjects:true,
       access:"Coumnity access",
-      privateprojects:"text-muted",
-      projectIcon:"fas fa-times",
-      support:"text-muted",
-      suupportIcon:"fas fa-times",
-      subdomain:"text-muted",
-      subdomainIcon:"fas fa-times",
-      reports:"text-muted ",
-      reportsIcon:"fas fa-times"
+      isAccess:true,
+      privateProjects:"Unlimited Private Projects",
+      isPrivateprojects:false,
+      support:"Dedicated Phone Support",
+      isSupport:false,
+      subdomain:"Unlimited Free Subdomain",
+      isSubdomain:false,
+      reports:"Monthly Status Reports ",
+      isReports:false
     },
     {
       plan:"Plus",
       dolloar:"$9",
       user:"5 Users",
+      isUser:true,
       storage:"50GB Storage",
+      isStorage:true,
       publicprojects:"Unlimited Public Projects",
+      isPublicProjects:true,
       access:"Coumnity access",
-      privateprojects:"",
-      projectIcon:"fas fa-check",
-      support:"",
-      suupportIcon:"fas fa-check",
-      subdomain:"",
-      subdomainIcon:"fas fa-check",
-      reports:"text-muted",
-      reportsIcon:"fas fa-times"
+      isAccess:true,
+      privateProjects:"Unlimited Private Projects",
+      isPrivateprojects:true,
+      support:"Dedicated Phone Support",
+      isSupport:true,
+      subdomain:"Unlimited Free Subdomain",
+      isSubdomain:true,
+      reports:"Monthly Status Reports ",
+      isReports:false
     },
     {
       plan:"Pro",
       dolloar:"$49",
       user:"Unlimited Users",
+      isUser:true,
       storage:"50GB Storage",
+      isStorage:true,
       publicprojects:"Unlimited Public Projects",
+      isPublicProjects:true,
       access:"Coumnity access",
-      privateprojects:"",
-      projectIcon:"fas fa-check",
-      support:"",
-      suupportIcon:"fas fa-check",
-      subdomain:"",
-      subdomainIcon:"fas fa-check",
-      reports:"",
-      reportsIcon:"fas fa-check"
+      isAccess:true,
+      privateProjects:"Unlimited Private Projects",
+      isPrivateprojects:true,
+      support:"Dedicated Phone Support",
+      isSupport:true,
+      subdomain:"Free Subdomain",
+      isSubdomain:true,
+      reports:"Monthly Status Reports ",
+      isReports:true
     }
   ]
   return <>
     <section className="pricing py-5">
   <div className="container">
     <div className="row">
-     { data.map((e,i)=>{
-     return <Card cardData={e} key={i}/>
+     { 
+     data.map((e,i)=>{
+     return <Card data={e} key={i}/>
     })}
       {/* <!-- Plus Tier --> */}
      

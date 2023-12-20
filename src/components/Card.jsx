@@ -1,26 +1,22 @@
 import React from 'react'
 
-function Card(props) {
-    
-  return <div className="col-lg-4" >
+function Card({data}) {
+  
+    return <div className="col-lg-4" >
   <div className="card mb-5 mb-lg-0">
     <div className="card-body">
-      <h5 className="card-title text-muted text-uppercase text-center">{props.cardData.plan}</h5>
-      <h6 className="card-price text-center">{props.cardData.dolloar}/month</h6>
+      <h5 className="card-title text-muted text-uppercase text-center">{data.plan}</h5>
+      <h6 className="card-price text-center">{data.dolloar}/month</h6>
       <hr/>
       <ul className="fa-ul">
-        <li><span className="fa-li"><i className="fas fa-check"></i></span>{props.cardData.user}</li>
-        <li><span className="fa-li"><i className="fas fa-check"></i></span>{props.cardData.storage}</li>
-        <li><span className="fa-li"><i className="fas fa-check"></i></span>Unlimited Public Projects</li>
-        <li><span className="fa-li"><i className="fas fa-check"></i></span>Community Access</li>
-        <li className={props.cardData.privateprojects}><span className="fa-li"><i className={props.cardData.projectIcon}></i></span>Unlimited
-          Private Projects</li>
-        <li className={props.cardData.support}><span className="fa-li"><i className={props.cardData.suupportIcon}></i></span>Dedicated
-          Phone Support</li>
-        <li className={props.cardData.subdomain}><span className="fa-li"><i className={props.cardData.subdomainIcon}></i></span>Free Subdomain
-        </li>
-        <li className={props.cardData.reports}><span className="fa-li"><i className={props.cardData.reportsIcon}></i></span>Monthly Status
-          Reports</li>
+        <li className={data.isUser?"":"text-muted"}><span className="fa-li"><i className={data.isUser?"fas fa-check":"fas fa-times"}></i></span>{data.plan!=="free"?<b>{data.user}</b>:data.user}</li>
+        <li className={data.isStorage?"":"text-muted"}><span className="fa-li"><i className={data.isStorage?"fas fa-check":"fas fa-times"}></i></span>{data.storage}</li>
+        <li className={data.isPublicProjects?"":"text-muted"}><span className="fa-li"><i className={data.isPublicProjects?"fas fa-check":"fas fa-times"}></i></span>{data.publicprojects}</li>
+        <li className={data.isAccess?"":"text-muted"}><span className="fa-li"><i className={data.isAccess?"fas fa-check":"fas fa-times"}></i></span>{data.access}</li>
+        <li className={data.isPrivateprojects?"":"text-muted"}><span className="fa-li"><i className={data.isPrivateprojects?"fas fa-check":"fas fa-times"}></i></span>{data.privateProjects}</li>
+        <li className={data.isSupport?"":"text-muted"}><span className="fa-li"><i className={data.isSupport?"fas fa-check":"fas fa-times"}></i></span>{data.support}</li>
+        <li className={data.isSubdomain?"":"text-muted"}><span className="fa-li"><i className={data.isSubdomain?"fas fa-check":"fas fa-times"}></i></span>{data.plan==="Pro"?<><b>Unlimited </b>{data.subdomain}</>:data.subdomain}</li>
+        <li className={data.isReports?"":"text-muted"}><span className="fa-li"><i className={data.isReports?"fas fa-check":"fas fa-times"}></i></span>{data.reports}</li>
       </ul>
       <div className="d-grid">
         <a href="#" className="btn btn-primary text-uppercase">Button</a>
